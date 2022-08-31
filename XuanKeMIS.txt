@@ -1,0 +1,65 @@
+CREATE TABLE [dbo].[adminlogin](
+	[id] [int] NOT NULL,
+	[adminId] [varchar](4) NOT NULL,
+	[password] [varchar](10) NOT NULL,
+ CONSTRAINT [PK_adminlogin] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+CREATE TABLE [dbo].[sinfo](
+	[Sno] [varchar](6) NOT NULL,
+	[Spassword] [varchar](10) NOT NULL,
+	[Sname] [varchar](20) NOT NULL,
+	[Ssex] [varchar](4) NOT NULL,
+	[Smajor] [varchar](10) NOT NULL,
+	[Stele] [varchar](11) NOT NULL,
+ CONSTRAINT [PK_sinfo] PRIMARY KEY CLUSTERED 
+(
+	[Sno] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[t_course](
+	[courseId] [varchar](6) NOT NULL,
+	[courseName] [varchar](20) NOT NULL,
+	[TId] [varchar](6) NOT NULL,
+	[courseTime] [varchar](20) NOT NULL,
+	[capacity] [int] NOT NULL,
+	[numselected] [int] NOT NULL,
+ CONSTRAINT [PK_t_course] PRIMARY KEY CLUSTERED 
+(
+	[courseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+CREATE TABLE [dbo].[t_selection](
+	[selectId] [int] IDENTITY(1,1) NOT NULL,
+	[courseId] [varchar](6) NOT NULL,
+	[Sno] [varchar](6) NOT NULL,
+ CONSTRAINT [PK_t_selection] PRIMARY KEY CLUSTERED 
+(
+	[selectId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+CREATE TABLE [dbo].[tinfo](
+	[Tno] [varchar](6) NOT NULL,
+	[Tpassword] [varchar](10) NOT NULL,
+	[Tname] [varchar](20) NOT NULL,
+	[Tsex] [varchar](4) NOT NULL,
+	[Tmajor] [varchar](10) NOT NULL,
+	[Ttele] [varchar](11) NOT NULL,
+ CONSTRAINT [PK_tinfo] PRIMARY KEY CLUSTERED 
+(
+	[Tno] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
